@@ -19,6 +19,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Requisições Web
+gem 'rest-client'
+
 # PostgreSQL gis
 gem 'activerecord-postgis-adapter'
 
@@ -26,7 +29,7 @@ gem 'activerecord-postgis-adapter'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
