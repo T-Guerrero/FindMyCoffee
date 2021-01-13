@@ -1,24 +1,46 @@
-# README
+# FindMyCoffee
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+FindMyCoffee is a system made for search and review Coffee Shops near your location. It was made in Semana Super FullStack powered by Onebitcode.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+### Backend
+  * Ruby on Rails
+  * PostgreSQL
+  * Postgis
+  * Requisições HTTP
+  * Google Place API
+  
+### Frontend
+  * React
+    * Styled Components
+    * React Rating Stars
+  * Axios
+  * Google Maps API
+  
+## Running
 
-* Configuration
+### Backend
+  Run the following commands to start the backend server at `localhost:3001`:
+  ```bash
+  $> bundle install
+  $> rails s -p 3001
+  ```
 
-* Database creation
+### Frontend
+  Run the following commands to start the frontend server at `localhost:3000`:
+  ```bash
+  $> yarn install
+  $> yarn start
+  ```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Note
+  You have to hire the following services at Google Cloud Plataform:
+  
+  * Places API
+  * Maps Javascript API
+  
+  Generate the API Key and set it in `.env` at frontend root and in `rails credentials` at backend.
+  
