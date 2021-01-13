@@ -36,7 +36,7 @@ FindMyCoffee is a system made for search and review Coffee Shops near your locat
   $> yarn start
   ```
 
-### Note
+## Note
   You have to hire the following services at Google Cloud Plataform:
   
   * Places API
