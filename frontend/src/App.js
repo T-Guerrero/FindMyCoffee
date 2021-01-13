@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import Establishment from './components/Establishment';
+import NearestCoffees from './components/NearestCoffees';
 import EstablishmentsService from './services/establishments_service';
 
 function App() {
@@ -53,8 +54,12 @@ function App() {
             selected.place_id && <Establishment place={selected}/>
           }
           <Marker icon="/images/my-location-pin.svg" title="Seu local" animation="2" position={{lat: latitude, lng: longitude}} />
+          { (latitude != 0 && longitude != 0) &&
+            <NearestCoffees latitude={latitude} longitude={longitude} setSelected={setSelected}/>
+          }
         </GoogleMap>
       </LoadScript>
+
     </Fragment>
   );
 }

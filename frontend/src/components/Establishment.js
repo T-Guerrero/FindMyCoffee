@@ -18,10 +18,12 @@ const Title = styled.h1`
   text-align: center;
   color: rgba(220, 110, 50, 0.7);
 `
+
 const Paragraph = styled.p`
   font-size: 13px;
   line-height: 14px;
 `
+
 const Image = styled.img`
   height: 150px;
   width: 100%;
