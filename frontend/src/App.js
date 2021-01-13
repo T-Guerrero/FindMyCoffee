@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import EstablishmentsService from './services/google_list_of_establishments';
+import Establishment from './components/Establishment';
+import EstablishmentsService from './services/establishments_service';
 
 function App() {
   const { REACT_APP_GOOGLE_API_KEY } = process.env;
@@ -8,6 +9,7 @@ function App() {
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const [locations, setLocations] = useState([]);
+  const [selected, setSelected] = useState({});
 
   async function setCurrentLocation() {
     await navigator.geolocation.getCurrentPosition((position) => {
@@ -34,7 +36,8 @@ function App() {
         <GoogleMap 
         mapContainerStyle={{height: "100vh", width: "100%"}}
         zoom={15}
-        center={{lat: latitude, lng: longitude}}>
+        center={{lat: latitude, lng: longitude}}
+        onClick={() => setSelected({})}>
           {
             locations.map((location, index) => {
               return (<Marker 
@@ -42,8 +45,12 @@ function App() {
                 icon="/images/coffee-pin.svg"
                 title={location.name} 
                 animation="4"
-                position={{lat: location.geometry.location.lat, lng: location.geometry.location.lng}}/>)
+                position={{lat: location.geometry.location.lat, lng: location.geometry.location.lng}}
+                onClick={() => setSelected(location)} />)
             })
+          }
+          {
+            selected.place_id && <Establishment place={selected}/>
           }
           <Marker icon="/images/my-location-pin.svg" title="Seu local" animation="2" position={{lat: latitude, lng: longitude}} />
         </GoogleMap>
