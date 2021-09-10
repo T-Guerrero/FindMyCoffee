@@ -2,7 +2,7 @@
 
 ## About
 
-FindMyCoffee is a system made for search and review Coffee Shops near your location. It was made in Semana Super FullStack powered by Onebitcode.
+FindMyCoffee is a system designed for search and review Coffee Shops near your location. It was made in Semana Super FullStack powered by Onebitcode.
 
 ## Technologies
 
